@@ -17,6 +17,33 @@
 .section{max-width:1050px;margin:auto;padding:85px 7%;border-top:1px solid #e9e6df}.section h2{font:400 36px 'Playfair Display',Georgia,serif;margin:0 0 18px}.section h3{font:400 25px 'Playfair Display',Georgia,serif;margin-top:35px}.section p{font-size:16px;line-height:1.9;color:#4e5752;max-width:760px}.section a.inline{color:var(--green);text-decoration:underline;text-underline-offset:4px}.translation-card{max-width:550px;margin:30px auto;position:relative}.translation-card img{width:100%;display:block;border-radius:18px}.translation-download{position:absolute;left:5%;bottom:3%;width:90%;height:9%}.contact .eyebrow{margin-bottom:18px}.contact .email-link{color:var(--green);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}.footer{padding:32px 7%;text-align:center;font-size:12px;color:#818780;border-top:1px solid #e9e6df}
 @media(max-width:1050px){.header-inner{flex-direction:column;align-items:flex-start}.nav{justify-content:flex-start}.hero{padding-left:7%;gap:5%}.about-layout{gap:4%}.about-content p{font-size:15px}}
 @media(max-width:700px){.header-inner{padding:22px 6%}.identity-name{font-size:28px}.identity-sub{font-size:8px;letter-spacing:1.6px}.nav{gap:13px 19px}.nav a{font-size:10px}.hero{padding:55px 7% 70px;display:flex;flex-direction:column;align-items:stretch;min-height:0}.hero h1{font-size:clamp(43px,10vw,65px)}.decor{font-size:330px;top:130px}.portrait-wrap{width:78%;align-self:center;margin-top:55px}.description{font-size:21px}.about-section{padding:55px 7%}.about-layout{grid-template-columns:1fr;gap:36px}.about-photo{margin:0 auto;width:100%;max-width:430px}.about-photo img{max-height:none}.about-content h2{font-size:clamp(29px,7vw,39px)}.about-content p{text-align:left;font-size:16px;line-height:1.8;hyphens:none}.section{padding:65px 7%}}
+/* Smaller About Me portrait */
+.about-layout {
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 6%;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 280px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+@media (max-width: 700px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
 </style>
 </head>
 <body>
