@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Soudabeh Gharibi — psychotherapy, psychoanalysis and writing in Toronto." name="description"/>
+<title>Writing &amp; Podcasts | Soudabeh Gharibi</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--cream:#faf8f2;--ink:#1d211f;--green:#456e63;--gold:#bc9877;--muted:#777b76}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}a{color:inherit;text-decoration:none}
+.site-header{border-bottom:1px solid #e9e6df;background:rgba(250,248,242,.96)}.header-inner{max-width:1400px;margin:auto;padding:20px 5.5%;display:flex;align-items:center;justify-content:space-between;gap:32px}.identity{display:flex;align-items:center;gap:18px}.leaf{width:39px;height:52px;color:var(--green);flex:none}.identity-name{font:400 clamp(24px,2.5vw,37px)/1.12 'Playfair Display',Georgia,serif;white-space:nowrap}.identity-sub{margin-top:9px;font-size:9px;letter-spacing:3px;color:#565f5b;white-space:nowrap}.nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:clamp(15px,2.2vw,35px)}.nav a{font-size:11px;letter-spacing:.6px;color:#4c6b64;padding:10px 0}.nav a:hover,.nav a:focus{border-bottom:1px solid var(--green)}
+.hero{position:relative;max-width:1400px;min-height:680px;margin:auto;padding:75px 6.5% 85px 15%;display:grid;grid-template-columns:1.2fr .9fr;gap:7%;align-items:center;overflow:hidden}.decor{position:absolute;left:-50px;top:80px;font:italic 510px/.9 'Playfair Display',serif;color:#e9e7df;opacity:.48;pointer-events:none;z-index:0}.hero-copy,.portrait-wrap{position:relative;z-index:1}.eyebrow{font-size:13px;letter-spacing:4px;color:var(--gold);margin-bottom:35px}.hero h1{font:400 clamp(43px,5.4vw,78px)/1.19 'Playfair Display',Georgia,serif;letter-spacing:-2px;margin:0 0 32px}.hero h1 em{font-weight:400;color:var(--green)}.description{font:italic clamp(19px,2vw,27px)/1.55 'Playfair Display',Georgia,serif;color:#4d5551;max-width:570px;margin:0 0 44px}.cta{display:inline-flex;align-items:center;gap:25px;padding:20px 32px;border-radius:40px;background:var(--green);color:#fff;letter-spacing:2px;font-size:12px;transition:background .2s}.cta:hover{background:#34584f}.cta span{font-size:22px;line-height:0}.consult{font:16px 'Playfair Display',serif;color:#91938e;margin:20px 0 0}.portrait-wrap{align-self:center;max-width:510px}.portrait{width:100%;aspect-ratio:.82;object-fit:cover;object-position:center 27%;border-radius:46% 46% 9% 9% / 28% 28% 9% 9%;display:block;background:#e4ded1}
+.about-section{border-top:1px solid #e9e6df;background:#faf9f5;padding:90px 6%}.about-layout{max-width:1320px;margin:auto;display:grid;grid-template-columns:minmax(260px,36%) minmax(0,1fr);gap:6%;align-items:start}.about-photo{position:relative;margin-top:54px}.about-photo img{width:100%;height:auto;max-height:650px;object-fit:cover;object-position:center top;border-radius:17px;display:block}.about-label{font-size:12px;letter-spacing:2.7px;color:#a88768;margin:0 0 23px}.about-content h2{font:400 clamp(29px,3vw,43px)/1.25 'Playfair Display',Georgia,serif;letter-spacing:-.5px;margin:0 0 30px}.about-content h2 em{color:var(--green);font-weight:400}.about-content p{font:400 16px/1.85 Georgia,'Times New Roman',serif;color:#363d39;text-align:justify;hyphens:auto;margin:0 0 20px;overflow-wrap:break-word}.about-content p:last-child{margin-bottom:0}
+.section{max-width:1050px;margin:auto;padding:85px 7%;border-top:1px solid #e9e6df}.section h2{font:400 36px 'Playfair Display',Georgia,serif;margin:0 0 18px}.section h3{font:400 25px 'Playfair Display',Georgia,serif;margin-top:35px}.section p{font-size:16px;line-height:1.9;color:#4e5752;max-width:760px}.section a.inline{color:var(--green);text-decoration:underline;text-underline-offset:4px}.translation-card{max-width:550px;margin:30px auto;position:relative}.translation-card img{width:100%;display:block;border-radius:18px}.translation-download{position:absolute;left:5%;bottom:3%;width:90%;height:9%}.contact .eyebrow{margin-bottom:18px}.contact .email-link{color:var(--green);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}.footer{padding:32px 7%;text-align:center;font-size:12px;color:#818780;border-top:1px solid #e9e6df}
+@media(max-width:1050px){.header-inner{flex-direction:column;align-items:flex-start}.nav{justify-content:flex-start}.hero{padding-left:7%;gap:5%}.about-layout{gap:4%}.about-content p{font-size:15px}}
+@media(max-width:700px){.header-inner{padding:22px 6%}.identity-name{font-size:28px}.identity-sub{font-size:8px;letter-spacing:1.6px}.nav{gap:13px 19px}.nav a{font-size:10px}.hero{padding:55px 7% 70px;display:flex;flex-direction:column;align-items:stretch;min-height:0}.hero h1{font-size:clamp(43px,10vw,65px)}.decor{font-size:330px;top:130px}.portrait-wrap{width:78%;align-self:center;margin-top:55px}.description{font-size:21px}.about-section{padding:55px 7%}.about-layout{grid-template-columns:1fr;gap:36px}.about-photo{margin:0 auto;width:100%;max-width:430px}.about-photo img{max-height:none}.about-content h2{font-size:clamp(29px,7vw,39px)}.about-content p{text-align:left;font-size:16px;line-height:1.8;hyphens:none}.section{padding:65px 7%}}
+/* Smaller About Me portrait */
+.about-layout {
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 6%;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 220px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+@media (max-width: 700px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+/* No decorative circles on personal portraits, at any screen size */
+.portrait-wrap .dot-top,
+.portrait-wrap .dot-bottom,
+.about-photo::before,
+.about-photo:before { display: none !important; content: none !important; }
+
+/* Second article: same card width and gold download band as Ferenczi */
+.transference-card {
+  max-width: 550px;
+  width: 100%;
+  margin: 36px auto 80px;
+  padding: 0;
+  text-align: center;
+}
+.transference-card .article-cover {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: 210px;
+  object-fit: fill;
+  border-radius: 12px;
+  margin: 0 auto 22px;
+}
+.transference-card h3,
+.transference-card p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.transference-card .download-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: none;
+  min-height: 52px;
+  padding: 12px 14px;
+  margin: 24px auto 0;
+  border-radius: 40px;
+  background: #c9a85d;
+  color: #333;
+  font: 15px Georgia, serif;
+  text-decoration: none;
+  text-align: center;
+}
+.transference-card .download-button:hover,
+.transference-card .download-button:focus-visible {
+  background: #b9964c;
+}
+
+/* Mobile-only refinement: smaller portraits beside their own text */
+@media (max-width: 700px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 37%);
+    align-items: center;
+    gap: 14px;
+    padding: 42px 6% 48px;
+    min-height: 0;
+  }
+  .hero-copy { min-width: 0; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: 1.2px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(24px, 6.1vw, 36px); line-height: 1.16; letter-spacing: -0.6px; margin-bottom: 16px; }
+  .hero .description { font-size: clamp(13px, 3.3vw, 16px); line-height: 1.45; margin-bottom: 18px; }
+  .hero .cta { padding: 12px 13px; gap: 7px; font-size: 9px; letter-spacing: .3px; }
+  .hero .cta span { font-size: 16px; }
+  .hero .consult { font-size: 11px; line-height: 1.4; margin-top: 12px; }
+  .hero .portrait-wrap { width: 100%; max-width: none; margin: 0; align-self: center; }
+  .hero .portrait { width: 100%; height: auto; aspect-ratio: .82; }
+  .hero .decor { display: none; }
+
+  .about-section { padding: 48px 6%; }
+  .about-layout { display: grid; grid-template-columns: minmax(0, 34%) minmax(0, 1fr); gap: 14px; align-items: start; max-width: 100%; }
+  .about-photo {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 5px 0 0;
+    position: relative;
+  }
+  .about-photo img { width: 100%; height: auto; max-height: none; }
+  .about-content { display: block; min-width: 0; }
+  .about-label { font-size: 10px; letter-spacing: 1.3px; margin-bottom: 12px; }
+  .about-content h2 { font-size: clamp(22px, 5.2vw, 30px); line-height: 1.25; margin-bottom: 16px; }
+  .about-content p { font-size: 14px; line-height: 1.7; text-align: left; hyphens: none; overflow-wrap: break-word; }
+  .transference-card { width: 86%; margin: 30px auto 60px; }
+  .transference-card .download-button { font-size: 12px; min-height: 45px; }
+}
+</style>
+<style>
+.writing-intro { padding-bottom: 32px; }
+.writing-intro h1 { font: 400 clamp(36px,5vw,58px)/1.2 'Playfair Display',Georgia,serif; margin:0 0 20px; }
+.writing-intro p { max-width: 700px; }
+#psychoanalysis { padding-top: 48px; }
+</style></head>
+<body>
+<header class="site-header"><div class="header-inner"><a aria-label="Soudabeh Gharibi home" class="identity" href="index.html#home"><svg aria-hidden="true" class="leaf" fill="none" viewbox="0 0 48 65" xmlns="http://www.w3.org/2000/svg"><path d="M8 54C3 34 13 15 41 4c1 26-8 42-33 50Z" stroke="currentColor" stroke-width="1.4"></path><path d="M3 63C15 39 23 28 41 4M12 43l-5-13M19 33l-1-14M23 31l12 1M15 42l15 1" stroke="currentColor" stroke-width="1.1"></path></svg><div><div class="identity-name">Soudabeh Gharibi</div><div class="identity-sub">PSYCHOTHERAPY · PSYCHOANALYSIS · THOUGHT</div></div></a><nav aria-label="Main navigation" class="nav"><a href="index.html#about">ABOUT</a><a href="#practice">CLINICAL PRACTICE</a><a href="#writing">PSYCHOANALYSIS</a><a href="#writing">WRITING</a><a href="#podcast">PODCAST</a><a href="index.html#contact">CONTACT</a></nav></div></header>
+<main><section class="section writing-intro" id="writing"><h1>Writing &amp; Podcasts</h1><p>Selected writings, Persian translations, and conversations on psychotherapy and psychoanalysis.</p></section><section class="section" id="practice"><h2>Clinical Practice</h2><p>I offer individual psychotherapy and couples therapy, with space to explore anxiety, relationships, trauma, and the questions that bring us to therapy. Sessions are available in English and Farsi.</p></section>
+<section class="section" id="psychoanalysis"><h2>Psychoanalysis</h2><p>Selected writings and Persian translations on psychoanalytic theory and clinical practice.</p><h3>Selected Persian Translations</h3><article class="translation-card"><img alt="Ferenczi Persian Translation" loading="lazy" src="ferenczi-article-card.png"/><a aria-label="Download Ferenczi Persian Translation" class="translation-download" download="" href="ferenczi-confusion-of-tongues-fa.pdf"></a></article></section><article class="transference-card">
+<img alt="انچه انتقال میابد، امر واقع نیست" class="article-cover" loading="lazy" src="transference-article-card.png"/>
+<p style="font-size:11px;letter-spacing:3px;margin-bottom:20px;">
+SELECTED PERSIAN TRANSLATIONS
+</p>
+<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:29px;font-weight:400;line-height:1.25;margin:0 0 15px;">
+What Is Transferred Is Not the Real
+</h3>
+<p style="font-family:Georgia,serif;font-size:16px;">
+Susana Huler
+</p>
+<p dir="rtl" lang="fa" style="font-size:20px;">
+انچه انتقال میابد، امر واقع نیست
+</p>
+<p dir="rtl" lang="fa" style="font-family:Georgia,serif;font-size:20px;">
+نویسنده: سوزانا هولر
+</p>
+<p dir="rtl" lang="fa" style="font-family:Georgia,serif;font-size:20px;">
+ترجمه: سودابه غریبی
+</p>
+<a class="download-button" download="" href="انچه انتقال میابد امر واقع نیست.pdf">
+Download Persian Translation (PDF) →
+</a>
+</article><section class="section" id="podcast"><h2>Podcast</h2><p>Conversations and ideas — coming soon.</p></section></main>
+<footer class="footer">© <span id="year">2026</span> Soudabeh Gharibi · Toronto, Ontario, Canada</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
 
