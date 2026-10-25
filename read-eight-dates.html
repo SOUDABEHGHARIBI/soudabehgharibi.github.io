@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,7 @@
 <title>هشت قرار | مطالعه آنلاین</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -16,315 +18,73 @@ body {
   background: #faf9f5;
   font-family: Tahoma, Arial, sans-serif;
   color: #173b2a;
+  text-align: center;
 }
 
 header {
-  padding: 18px 24px;
-  background: #faf9f5;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  border-bottom: 1px solid #e5e1d8;
+  padding: 50px 20px;
+  max-width: 700px;
+  margin: auto;
 }
 
-header strong {
-  font-size: 19px;
+h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
 }
 
-a {
-  color: #173b2a;
-  text-decoration: none;
+p {
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 30px;
 }
 
-.toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #f1eee5;
-  padding: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  border-bottom: 1px solid #ddd7c9;
-}
-
-button {
+.button {
+  display: inline-block;
   background: #c9a85d;
   color: #173b2a;
-  border: none;
-  padding: 11px 17px;
-  border-radius: 22px;
-  font-size: 14px;
-  cursor: pointer;
-  font-family: inherit;
+  padding: 16px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-button:hover {
+.button:hover {
   background: #b99a50;
 }
 
-button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.page-info {
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.reader {
-  width: 100%;
-  min-height: 70vh;
-  padding: 25px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: auto;
-}
-
-#pdf-canvas {
+.back {
   display: block;
-  max-width: none;
-  background: white;
-  box-shadow: 0 3px 18px rgba(0,0,0,0.12);
-}
-
-#status {
-  text-align: center;
-  padding: 14px;
+  margin-top: 35px;
+  color: #173b2a;
+  text-decoration: none;
   font-size: 14px;
 }
 
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
-    text-align: center;
-  }
-
-  header strong {
-    font-size: 17px;
-  }
-
-  .toolbar {
-    gap: 8px;
-    padding: 10px 5px;
-  }
-
-  button {
-    padding: 10px 12px;
-    font-size: 12px;
-  }
-
-  .reader {
-    padding: 12px 5px;
-  }
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <strong>هشت قرار — مطالعه آنلاین</strong>
 
-  <a href="index.html#books">
-    بازگشت به کتاب‌ها
-  </a>
+<h1>هشت قرار — مطالعه آنلاین</h1>
+
+<p>
+برای مطالعه کتاب هشت قرار، روی دکمه زیر کلیک کنید.
+<br>
+تمام صفحات کتاب در مرورگر قابل مشاهده هستند.
+</p>
+
+<a class="button" href="hasht-gharar.pdf">
+مطالعه آنلاین کتاب
+</a>
+
+<a class="back" href="index.html#books">
+بازگشت به کتاب‌ها
+</a>
+
 </header>
-
-<div class="toolbar">
-
-  <button id="prev">
-    صفحه قبل
-  </button>
-
-  <span class="page-info">
-    صفحه <span id="page-num">۱</span>
-    از <span id="page-count">...</span>
-  </span>
-
-  <button id="next">
-    صفحه بعد
-  </button>
-
-  <button id="zoom-out">
-    −
-  </button>
-
-  <button id="zoom-in">
-    +
-  </button>
-
-</div>
-
-<div id="status">
-  در حال بارگذاری کتاب...
-</div>
-
-<div class="reader" id="reader">
-  <canvas id="pdf-canvas"></canvas>
-</div>
-
-<script type="module">
-
-import * as pdfjsLib from
-'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs';
-
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
-
-const pdfUrl = 'hasht-gharar.pdf';
-
-let pdfDoc = null;
-let pageNum = 1;
-let scale = 1;
-let rendering = false;
-let pendingPage = null;
-
-const canvas = document.getElementById('pdf-canvas');
-const context = canvas.getContext('2d');
-const reader = document.getElementById('reader');
-const status = document.getElementById('status');
-
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
-
-function updateButtons() {
-  prevButton.disabled = !pdfDoc || pageNum <= 1;
-  nextButton.disabled = !pdfDoc || pageNum >= pdfDoc.numPages;
-}
-
-async function renderPage(num) {
-
-  if (!pdfDoc) return;
-
-  if (rendering) {
-    pendingPage = num;
-    return;
-  }
-
-  rendering = true;
-
-  try {
-    const page = await pdfDoc.getPage(num);
-
-    const baseViewport = page.getViewport({ scale: 1 });
-
-    const availableWidth = Math.max(
-      100,
-      reader.clientWidth - 20
-    );
-
-    const fitScale = availableWidth / baseViewport.width;
-
-    const viewport = page.getViewport({
-      scale: fitScale * scale
-    });
-
-    const pixelRatio = Math.min(
-      window.devicePixelRatio || 1,
-      2
-    );
-
-    canvas.width = Math.floor(viewport.width * pixelRatio);
-    canvas.height = Math.floor(viewport.height * pixelRatio);
-
-    canvas.style.width = viewport.width + 'px';
-    canvas.style.height = viewport.height + 'px';
-
-    const renderContext = {
-      canvasContext: context,
-      viewport: viewport,
-      transform: pixelRatio !== 1
-        ? [pixelRatio, 0, 0, pixelRatio, 0, 0]
-        : null
-    };
-
-    await page.render(renderContext).promise;
-
-    document.getElementById('page-num').textContent = num;
-
-    status.textContent = '';
-
-    updateButtons();
-
-  } catch (error) {
-    console.error(error);
-    status.textContent = 'خطا در نمایش صفحه کتاب.';
-  } finally {
-    rendering = false;
-
-    if (pendingPage !== null) {
-      const nextPage = pendingPage;
-      pendingPage = null;
-      renderPage(nextPage);
-    }
-  }
-}
-
-prevButton.addEventListener('click', () => {
-  if (pageNum <= 1) return;
-
-  pageNum--;
-  renderPage(pageNum);
-});
-
-nextButton.addEventListener('click', () => {
-  if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
-
-  pageNum++;
-  renderPage(pageNum);
-});
-
-document.getElementById('zoom-in')
-  .addEventListener('click', () => {
-    scale = Math.min(scale + 0.2, 3);
-    renderPage(pageNum);
-  });
-
-document.getElementById('zoom-out')
-  .addEventListener('click', () => {
-    scale = Math.max(scale - 0.2, 0.5);
-    renderPage(pageNum);
-  });
-
-window.addEventListener('resize', () => {
-  if (pdfDoc) renderPage(pageNum);
-});
-
-async function loadPDF() {
-
-  try {
-
-    pdfDoc = await pdfjsLib.getDocument(pdfUrl).promise;
-
-    document.getElementById('page-count').textContent =
-      pdfDoc.numPages;
-
-    updateButtons();
-
-    await renderPage(pageNum);
-
-  } catch (error) {
-
-    console.error(error);
-
-    status.innerHTML =
-      'خطا در بارگذاری کتاب. ' +
-      '<a href="hasht-gharar.pdf" target="_blank">' +
-      'باز کردن مستقیم PDF</a>';
-  }
-}
-
-updateButtons();
-loadPDF();
-
-</script>
 
 </body>
 </html>
