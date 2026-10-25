@@ -134,6 +134,17 @@
   .transference-card { width: 86%; margin: 30px auto 60px; }
   .transference-card .download-button { font-size: 12px; min-height: 45px; }
 }
+
+/* Books: responsive gallery, consistent with existing website */
+.books-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 24px;margin:38px auto 0;align-items:start}
+.book-entry{min-width:0;text-align:center;margin:0}
+.book-entry img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.book-entry summary{list-style:none;cursor:pointer}.book-entry summary::-webkit-details-marker{display:none}
+.book-entry h3{font-size:21px;margin:18px 0 8px}
+.book-entry p{margin:8px auto;font-size:14px}
+.book-description{padding:12px 4px 18px;text-align:right}.book-description p{text-align:right;line-height:1.7}
+.book-read-link{display:inline-block;margin-top:10px;padding:12px 20px;border-radius:30px;background:#c9a85d;color:#233e37;font-size:14px}
+@media(max-width:700px){.books-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}.book-entry h3{font-size:17px}}
 </style>
 </head>
 <body>
@@ -156,11 +167,15 @@
 <section class="section" id="books">
 <div class="eyebrow">— BOOKS —</div>
 <h2>Books &amp; Translations</h2>
-<div style="max-width:320px;margin:40px auto;text-align:center">
-<a href="read-eight-dates.html" aria-label="مطالعه آنلاین کتاب هشت قرار"><img src="hasht-gharar-cover.jpg" alt="جلد کتاب هشت قرار — برای مطالعه آنلاین کلیک کنید" style="display:block;width:100%;height:auto;border-radius:12px" loading="lazy"/></a>
-<h3 lang="fa" dir="rtl" style="margin-bottom:8px">هشت قرار</h3>
-<p style="text-align:center;margin:0 0 24px">Eight Dates</p>
-<a href="read-eight-dates.html" class="cta" style="background:#c9a85d;color:#333;letter-spacing:0;font-size:15px" lang="fa" dir="rtl">مطالعه آنلاین کتاب</a>
+<p>Selected books and translations. Select a cover to see more information.</p>
+<div class="books-grid">
+<div class="book-entry"><a href="read-eight-dates.html" aria-label="مطالعه آنلاین کتاب هشت قرار"><img src="hasht-gharar-cover.jpg" alt="جلد کتاب هشت قرار" loading="lazy"></a><h3 lang="fa" dir="rtl">هشت قرار</h3><p style="text-align:center">Eight Dates</p><a class="book-read-link" href="read-eight-dates.html" lang="fa" dir="rtl">مطالعه آنلاین کتاب</a></div>
+<details class="book-entry"><summary><img src="book-seven-principles.jpg" alt="جلد کتاب هفت اصل برای رسیدن به موفقیت در ازدواج" loading="lazy"></summary><div class="book-description" lang="fa" dir="rtl"><h3>هفت اصل برای رسیدن به موفقیت در ازدواج</h3><p>نویسنده: جان گاتمن و نان سیلور</p><p>توضیحات تکمیلی کتاب به‌زودی اضافه می‌شود.</p></div></details>
+<details class="book-entry"><summary><img src="book-love-brain.jpg" alt="جلد کتاب مدارهای مغزی عشق را تقویت کنید!" loading="lazy"></summary><div class="book-description" lang="fa" dir="rtl"><h3>مدارهای مغزی عشق را تقویت کنید!</h3><p>نویسنده: استن تاتکین</p><p>توضیحات تکمیلی کتاب به‌زودی اضافه می‌شود.</p></div></details>
+<details class="book-entry"><summary><img src="book-self-therapy.jpg" alt="جلد کتاب تجربه طرحواره‌درمانی از درون" loading="lazy"></summary><div class="book-description" lang="fa" dir="rtl"><h3>تجربه طرحواره‌درمانی از درون</h3><p>نویسنده: جان فارل و آیدا شاو</p><p>توضیحات تکمیلی کتاب به‌زودی اضافه می‌شود.</p></div></details>
+<details class="book-entry"><summary><img src="book-mindfulness-couples.jpg" alt="جلد کتاب ذهن‌آگاهی و پذیرش در زوج‌درمانی" loading="lazy"></summary><div class="book-description" lang="fa" dir="rtl"><h3>ذهن‌آگاهی و پذیرش در زوج‌درمانی</h3><p>نویسنده: دایان گهارت</p><p>توضیحات تکمیلی کتاب به‌زودی اضافه می‌شود.</p></div></details>
+<details class="book-entry"><summary><img src="book-prehospital.jpg" alt="جلد کتاب عوامل انسانی و ارگونومی مراقبت‌های پیش‌بیمارستانی" loading="lazy"></summary><div class="book-description" lang="fa" dir="rtl"><h3>عوامل انسانی و ارگونومی مراقبت‌های پیش‌بیمارستانی</h3><p>توضیحات تکمیلی کتاب به‌زودی اضافه می‌شود.</p></div></details>
+<details class="book-entry"><summary><img src="book-chronic-illness.jpg" alt="جلد کتاب سازگاری با بیماری‌های مزمن، تأثیر و مداخله" loading="lazy"></summary><div class="book-description" lang="fa" dir="rtl"><h3>سازگاری با بیماری‌های مزمن، تأثیر و مداخله</h3><p>توضیحات تکمیلی کتاب به‌زودی اضافه می‌شود.</p></div></details>
 </div>
 </section>
 <section class="section contact" id="contact"><div class="eyebrow">06 / Get in Touch</div><h2>Get in Touch</h2><p>For psychotherapy inquiries, professional collaborations, or general questions, please feel free to reach out.</p><p><a class="email-link" href="mailto:Soudabehgharibi86@gmail.com">Soudabehgharibi86@gmail.com</a></p><a class="cta" href="mailto:Soudabehgharibi86@gmail.com">SEND AN EMAIL <span aria-hidden="true">→</span></a></section>
